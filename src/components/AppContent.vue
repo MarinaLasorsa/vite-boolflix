@@ -16,8 +16,11 @@ export default {
 
 <template>
     <div>
-        content
-        <AppCard />
+        <ul>
+            <li v-for="movie in store.movies">
+                <AppCard :movie="movie" />
+            </li>
+        </ul>
     </div>
 </template>
 
