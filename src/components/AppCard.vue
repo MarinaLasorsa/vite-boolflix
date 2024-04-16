@@ -8,6 +8,11 @@ export default {
         return {
 
         }
+    },
+    computed: {
+        flagImagePath() {
+            return `../../${this.movie.original_language}.png`
+        }
     }
 }
 </script>
@@ -16,9 +21,13 @@ export default {
     <div>
         <h1>{{ movie.title }}</h1>
         <h2>{{ movie.original_title }}</h2>
-        <h4>{{ movie.original_language }}</h4>
+        <img class="language-flag" :src="flagImagePath" :alt="movie.original_language">
         <p>{{ movie.vote_average }}</p>
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.language-flag {
+    width: 30px;
+}
+</style>
