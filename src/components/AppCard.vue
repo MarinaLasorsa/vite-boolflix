@@ -2,7 +2,10 @@
 
 export default {
     props: {
-        movie: Object
+        media: {
+            type: Object,
+            required: true
+        }
     },
     data() {
         return {
@@ -11,19 +14,35 @@ export default {
     },
     computed: {
         flagImagePath() {
-            return `../../${this.movie.original_language}.png`
+            return `../../${this.media.original_language}.png`
+        },
+        getMediaTitle() {
+            if (this.media.title) {
+                return this.media.title
+            }
+            else {
+                return this.media.name
+            }
+        },
+        getMediaOriginalTitle() {
+            if (this.media.original_title) {
+                return this.media.original_title
+            }
+            else {
+                return this.media.original_name
+            }
         }
     }
 }
 </script>
 
 <template>
-    <div>
-        <h1>{{ movie.title }}</h1>
-        <h2>{{ movie.original_title }}</h2>
-        <img class="language-flag" :src="flagImagePath" :alt="movie.original_language">
-        <p>{{ movie.vote_average }}</p>
-    </div>
+    <li>
+        <h2>{{ getMediaTitle }}</h2>
+        <h3>{{ getMediaOriginalTitle }}</h3>
+        <img class="language-flag" :src="flagImagePath" :alt="media.original_language">
+        <p>{{ media.vote_average }}</p>
+    </li>
 </template>
 
 <style scoped lang="scss">
