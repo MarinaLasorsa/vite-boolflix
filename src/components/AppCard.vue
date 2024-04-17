@@ -13,9 +13,6 @@ export default {
         }
     },
     computed: {
-        flagImagePath() {
-            return `../../${this.media.original_language}.png`
-        },
         getMediaTitle() {
             if (this.media.title) {
                 return this.media.title
@@ -31,6 +28,12 @@ export default {
             else {
                 return this.media.original_name
             }
+        },
+        flagImagePath() {
+            return `../../${this.media.original_language}.png`
+        },
+        posterImageUrl() {
+            return `https://image.tmdb.org/t/p/w342/${this.media.poster_path}`
         }
     }
 }
@@ -38,6 +41,7 @@ export default {
 
 <template>
     <li>
+        <img :src="posterImageUrl" :alt="getMediaTitle" />
         <h2>{{ getMediaTitle }}</h2>
         <h3>{{ getMediaOriginalTitle }}</h3>
         <img class="language-flag" :src="flagImagePath" :alt="media.original_language">
