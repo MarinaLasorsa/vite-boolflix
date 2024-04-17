@@ -1,3 +1,10 @@
+<template>
+    <div>
+        header
+        <SearchBar />
+    </div>
+</template>
+
 <script>
 import SearchBar from './SearchBar.vue'
 
@@ -12,12 +19,5 @@ export default {
     }
 }
 </script>
-
-<template>
-    <div>
-        header
-        <SearchBar />
-    </div>
-</template>
 
 <style scoped lang="scss"></style>

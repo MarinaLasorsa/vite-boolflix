@@ -1,19 +1,3 @@
-<script>
-import AppCard from './AppCard.vue';
-import { store } from '../store.js';
-
-export default {
-    components: {
-        AppCard
-    },
-    data() {
-        return {
-            store
-        }
-    }
-}
-</script>
-
 <template>
     <div>
         <div>
@@ -30,5 +14,21 @@ export default {
         </div>
     </div>
 </template>
+
+<script>
+import AppCard from './AppCard.vue';
+import { store } from '../store.js';
+
+export default {
+    components: {
+        AppCard
+    },
+    data() {
+        return {
+            store
+        }
+    }
+}
+</script>
 
 <style scoped lang="scss"></style>

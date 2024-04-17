@@ -1,3 +1,10 @@
+<template>
+    <div>
+        <input type="text" name="search" v-model.trim="inputValue" />
+        <button @click="newSearch">Cerca</button>
+    </div>
+</template>
+
 <script>
 import { store } from '../store.js';
 import axios from 'axios';
@@ -42,12 +49,5 @@ export default {
     }
 }
 </script>
-
-<template>
-    <div>
-        <input type="text" name="search" v-model.trim="inputValue" />
-        <button @click="newSearch">Cerca</button>
-    </div>
-</template>
 
 <style scoped lang="scss"></style>
