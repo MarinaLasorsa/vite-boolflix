@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <input type="text" name="search" v-model.trim="inputValue" />
-        <button @click="newSearch">Cerca</button>
+    <div class="position-relative">
+        <input class="search-bar" type="text" name="search" v-model.trim="inputValue" placeholder="cerca..."
+            @keyup.enter="newSearch" />
+        <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="search-icon" />
     </div>
 </template>
 
@@ -50,4 +51,28 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.search-bar {
+    height: 30px;
+    border: none;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    padding-left: 50px;
+    margin-right: 10px;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+.search-icon {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+</style>
