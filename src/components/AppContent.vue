@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="page-content">
         <div class="container">
             <div>
                 <h1>Movies</h1>
@@ -9,7 +9,7 @@
             </div>
             <div>
                 <h1>TV Series</h1>
-                <ul>
+                <ul class="row">
                     <AppCard v-for="tvSerie in store.tvSeries" :key="tvSerie.id" :media="tvSerie" />
                 </ul>
             </div>
@@ -33,4 +33,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.page-content {
+    color: lightgray;
+    margin: 20px 0;
+}
+</style>
